@@ -1,0 +1,151 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	height: 100%;
+
+	background: linear-gradient(to bottom, #81D4FA 0%, #B3E5FC 100%);
+	background-repeat: no-repeat;
+
+	font-family: sans-serif;
+
+	overflow: hidden;
+}
+
+body {
+	height: 100%;
+	display: grid;
+}
+
+button {
+	padding: 8px;
+
+	border: none;
+	border-radius: 4px;
+
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+button.active {
+	background-color: #FFF176;
+}
+
+.main {
+	padding: 8px;
+}
+
+.location {
+	font-size: small;
+
+	opacity: 0.5;
+}
+
+.icon {
+	display: block;
+	margin: auto;
+}
+
+.temperature {
+	padding: 0px 64px;
+
+	font-size: xx-large;
+	font-weight: normal;
+	text-align: center;
+}
+
+.sky {
+	font-size: normal;
+	font-weight: normal;
+	text-align: center;
+}
+
+.extra {
+	position: absolute;
+	bottom: 8px;
+
+	font-size: smaller;
+	line-height: 1.5em;
+
+	opacity: 0.75;
+}
+
+.forecast {
+	height: 100%;
+	padding: 32px;
+
+	grid-column: 2;
+
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.title {
+	font-size: x-large;
+	font-weight: normal;
+
+	padding-bottom: 8px;
+}
+
+.graph {
+	margin-top: 32px;
+	height: 192px;
+	padding: 8px 8px 0px 8px;
+	display: grid;
+	grid-template-columns: auto 32px 32px 32px 32px 32px 32px 32px 32px auto;
+	
+	border-bottom: rgba(0, 0, 0, 0.5) solid 1px;
+}
+
+.graph .bar {
+	height: 192px;
+	margin-right: 8px;
+	position:relative;
+}
+
+.graph .bar .progress {
+	height: 0%;
+	width: 100%;
+	bottom: 0px;
+	padding-top: 6px;
+	position: absolute;
+
+	border-radius: 4px 4px 0px 0px;
+
+	font-size: x-small;
+	text-align: center;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.5);
+
+	background-color: #FFF176;
+}
+
+.hours {
+	padding: 8px 8px 0px 8px;
+	display: grid;
+	grid-template-columns: auto 32px 32px 32px 32px 32px 32px 32px 32px auto;
+
+	font-size: x-small;
+
+	opacity: 0.5;
+}
+
+.hours div {
+	margin-right: 8px;
+
+	text-align: center;
+}
+
+@media(max-width:719px) {
+	.main {
+		column-width: unset;
+	}
+
+	.forecast {
+		display: none;
+	}
+}

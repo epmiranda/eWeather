@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Weather</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="location">
+				location
+			</div>
+			<img class="icon">
+			<div class="temperature">
+				temperature
+			</div>
+			<div class="sky">
+				sky
+			</div>
+			<div class="extra">
+				<div class="humidity">
+					humidity
+				</div>
+				<div class="wind">
+					wind
+				</div>
+			</div>
+		</div>
+		<div class="forecast">
+			<div class="title">
+				Forecast
+			</div>
+			<div class="day">
+
+			</div>
+			<div class="week">
+				<button class="toggle active" onclick="openDay(event, 0)">Today</button>
+				<button class="toggle" onclick="openDay(event, 1)">Tomorrow</button>
+				<button class="toggle" onclick="openDay(event, 2)">In 2 days</button>
+				<button class="toggle" onclick="openDay(event, 3)">In 3 days</button>
+				<button class="toggle" onclick="openDay(event, 4)">In 4 days</button>
+				<button class="toggle" onclick="openDay(event, 5)">In 5 days</button>
+			</div>
+			<div class="graph">
+				<div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div class="bar"><div class="progress"></div></div>
+				<div></div>
+			</div>
+			<div class="hours">
+				<div></div>
+				<div>00</div>
+				<div>03</div>
+				<div>06</div>
+				<div>09</div>
+				<div>12</div>
+				<div>15</div>
+				<div>18</div>
+				<div>21</div>
+				<div></div>
+			</div>
+		</div>
+	</body>
+
+	<script src="./renderer.js"></script>
+</html>
