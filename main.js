@@ -7,11 +7,8 @@ function createWindow() {
 		width: 720,
 		height: 480,
 		minHeight: 256, 
-		minWidth: 192,
-		maxHeight: 480,
-		maxWidth: 720,
-		maximizable: false,
-		fullscreenable: false,
+		minWidth: 256,
+		useContentSize: true,
 		webPreferences: {
 			nodeIntegration: true
 		}

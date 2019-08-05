@@ -5,7 +5,7 @@
 
 html {
 	height: 100%;
-
+	
 	background: linear-gradient(to bottom, #81D4FA 0%, #B3E5FC 100%);
 	background-repeat: no-repeat;
 
@@ -111,7 +111,7 @@ button.active {
 	height: 0%;
 	width: 100%;
 	bottom: 0px;
-	padding-top: 6px;
+	padding: 6px 0px;
 	position: absolute;
 
 	border-radius: 4px 4px 0px 0px;
