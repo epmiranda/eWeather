@@ -41,29 +41,48 @@
 				<button class="toggle" onclick="openDay(event, 4)">In 4 days</button>
 				<button class="toggle" onclick="openDay(event, 5)">In 5 days</button>
 			</div>
-			<div class="graph">
-				<div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div class="bar"><div class="progress"></div></div>
-				<div></div>
-			</div>
-			<div class="hours">
-				<div></div>
-				<div>00</div>
-				<div>03</div>
-				<div>06</div>
-				<div>09</div>
-				<div>12</div>
-				<div>15</div>
-				<div>18</div>
-				<div>21</div>
-				<div></div>
+			<div class="forecast_graph">
+				<div class="graph">
+					<div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 0)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 1)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 2)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 3)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 4)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 5)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 6)"></div></div>
+					<div class="bar"><div class="progress" onclick="openForecast(event, 7)"></div></div>
+					<div></div>
+				</div>
+				<div class="hours">
+					<div></div>
+					<div>00</div>
+					<div>03</div>
+					<div>06</div>
+					<div>09</div>
+					<div>12</div>
+					<div>15</div>
+					<div>18</div>
+					<div>21</div>
+					<div></div>
+				</div>
+				<div class="forecast_detail">
+					<img class="icon">
+					<div class="data">
+						<div class="temperature">
+							0°C
+						</div>
+						<div class="sky">
+							sky
+						</div>
+						<div class="humidity">
+							humidity
+						</div>
+						<div class="wind">
+							wind
+						</div>
+				 	</div>
+				</div>
 			</div>
 		</div>
 	</body>

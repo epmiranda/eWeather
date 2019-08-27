@@ -7,7 +7,9 @@ const forecast_url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&
 
 const now = new Date();
 
+let hoursPassed = 0;	
 let forecast_day = 0;
+let forecast_hour = 0;
 
 request(weather_url, function (error, response, body) {
 	body = JSON.parse(body);
@@ -69,7 +71,7 @@ function updateForecast() {
 			const graph = document.getElementsByClassName("graph");
 			const bar = graph[0].getElementsByClassName("bar");
 
-			let hoursPassed = (now.getHours() / 3) | 0;
+			hoursPassed = (now.getHours() / 3) | 0;			
 			let hoursOffset = 0;
 			if (forecast_day == 0) {
 				hoursOffset = -(hoursPassed + 1);
@@ -91,6 +93,37 @@ function updateForecast() {
 					progress[0].style.opacity = "0.5";
 				}
 			}
+
+			let fh = forecast_hour;
+			if(forecast_day == 0 && forecast_hour < (7 - hoursPassed))
+			{
+				fh = 0;
+			}
+			else if(forecast_day != 0)
+			{
+				fh = 7 - hoursPassed + (forecast_day - 1) * 7 + fh;
+			}
+			else
+			{
+				fh = forecast_hour - hoursPassed - 1;
+			}
+
+			const forecast_detail = document.getElementsByClassName("forecast_detail");
+			forecast_detail[0].getElementsByClassName("temperature")[0].innerHTML = (body.list[fh].main.temp | 0) + "°C";
+
+			const icon = forecast_detail[0].getElementsByClassName("icon");
+			let icon_name = body.list[fh].weather[0].icon;
+			const icon_url = `http://openweathermap.org/img/wn/${icon_name}@2x.png`;
+			icon[0].setAttribute("src", icon_url);
+
+			const sky = forecast_detail[0].getElementsByClassName("sky");
+			sky[0].innerHTML = body.list[fh].weather[0].description;
+
+			const humidity = forecast_detail[0].getElementsByClassName("humidity");
+			humidity[0].innerHTML = "Humidity: " + body.list[fh].main.humidity + "%";
+	
+			const wind = forecast_detail[0].getElementsByClassName("wind");
+			wind[0].innerHTML = "Wind: " + body.list[fh].wind.speed + " km/h";
 		}
 	});
 }
@@ -99,6 +132,7 @@ updateForecast();
 
 function openDay(event, day) {
 	forecast_day = day;
+	forecast_hour = 0;
 	updateForecast();
 
 	const toggles = document.getElementsByClassName("toggle");
@@ -107,4 +141,9 @@ function openDay(event, day) {
 	}
 
 	event.currentTarget.className += " active";
+}
+
+function openForecast(event, hour) {
+	forecast_hour = hour;
+	updateForecast();
 }

@@ -55,13 +55,11 @@ button.active {
 	padding: 0px 64px;
 
 	font-size: xx-large;
-	font-weight: normal;
 	text-align: center;
 }
 
 .sky {
 	font-size: normal;
-	font-weight: normal;
 	text-align: center;
 }
 
@@ -91,8 +89,11 @@ button.active {
 	padding-bottom: 8px;
 }
 
+.forecast_graph {
+	margin: auto;
+}
+
 .graph {
-	margin-top: 32px;
 	height: 192px;
 	padding: 8px 8px 0px 8px;
 	display: grid;
@@ -104,7 +105,7 @@ button.active {
 .graph .bar {
 	height: 192px;
 	margin-right: 8px;
-	position:relative;
+	position: relative;
 }
 
 .graph .bar .progress {
@@ -124,8 +125,13 @@ button.active {
 	background-color: #FFF176;
 }
 
+.graph .bar .progress:hover {
+	background-color: #FFF9C4;
+}
+
 .hours {
-	padding: 8px 8px 0px 8px;
+	padding: 8px;
+	margin-bottom: 8px;
 	display: grid;
 	grid-template-columns: auto 32px 32px 32px 32px 32px 32px 32px 32px auto;
 
@@ -139,6 +145,49 @@ button.active {
 
 	text-align: center;
 }
+
+.forecast_detail {
+	height: 100px;
+	padding: 8px;
+
+	display: grid;
+	grid-template-columns: 100px auto;
+
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.forecast_detail .icon {
+	margin: 0px;
+}
+
+.forecast_detail .data {
+	padding: 0px 8px;
+	display: grid;
+	grid-template-rows: 25px 25px 25px 25px;
+	align-items: center;
+}
+
+.forecast_detail .temperature {
+	padding: 0px;
+
+	font-size: large;
+	font-weight: bold;
+	text-align: left;
+}
+
+.forecast_detail .sky {
+	font-size: inherit;
+	text-align: left;
+}
+
+.forecast_detail .humidity,
+.forecast_detail .wind {
+	font-size: small;
+
+	opacity: 0.75;
+}
+
 
 @media(max-width:719px) {
 	.main {
